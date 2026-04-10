@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class TrainBogieManagement {
+    public static void main(String[] args) {
+
+        // Create ArrayList
+        ArrayList<String> bogies = new ArrayList<>();
+
+        // Add bogies (Create)
+        bogies.add("Sleeper");
+        bogies.add("AC Chair");
+        bogies.add("First Class");
+
+        // Display bogies (Read)
+        System.out.println("Initial Bogies: " + bogies);
+
+        // Remove a bogie (Delete)
+        bogies.remove("AC Chair");
+        System.out.println("After Removal: " + bogies);
+
+        // Check existence (Search)
+        if (bogies.contains("Sleeper")) {
+            System.out.println("Sleeper bogie exists.");
+        } else {
+            System.out.println("Sleeper bogie not found.");
+        }
+
+        // Final state
+        System.out.println("Final Bogie List: " + bogies);
+    }
+}
