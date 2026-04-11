@@ -1,0 +1,19 @@
+import java.util.HashSet;
+
+public class UniqueBogieManagement {
+    public static void main(String[] args) {
+
+        // Create HashSet
+        HashSet<String> bogieIDs = new HashSet<>();
+
+        // Add bogie IDs (duplicates included)
+        bogieIDs.add("B101");
+        bogieIDs.add("B102");
+        bogieIDs.add("B103");
+        bogieIDs.add("B101"); // Duplicate
+        bogieIDs.add("B102"); // Duplicate
+
+        // Display unique bogie IDs
+        System.out.println("Unique Bogie IDs: " + bogieIDs);
+    }
+}
