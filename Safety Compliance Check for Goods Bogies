@@ -1,0 +1,36 @@
+import java.util.*;
+
+class GoodsBogie {
+    String type;
+    String cargo;
+
+    GoodsBogie(String type, String cargo) {
+        this.type = type;
+        this.cargo = cargo;
+    }
+}
+
+public class SafetyCheck {
+    public static void main(String[] args) {
+
+        // Creating list of goods bogies
+        List<GoodsBogie> bogies = new ArrayList<>();
+        bogies.add(new GoodsBogie("Cylindrical", "Petroleum"));
+        bogies.add(new GoodsBogie("Box", "Coal"));
+        bogies.add(new GoodsBogie("Cylindrical", "Petroleum"));
+
+        // Safety validation using allMatch()
+        boolean isSafe = bogies.stream()
+            .allMatch(b -> 
+                !b.type.equals("Cylindrical") || 
+                 b.cargo.equals("Petroleum")
+            );
+
+        // Display result
+        if (isSafe) {
+            System.out.println("Train is SAFE for transport");
+        } else {
+            System.out.println("Train is NOT SAFE");
+        }
+    }
+}
