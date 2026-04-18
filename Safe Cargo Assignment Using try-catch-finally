@@ -1,0 +1,53 @@
+// Custom Runtime Exception
+class CargoSafetyException extends RuntimeException {
+    public CargoSafetyException(String message) {
+        super(message);
+    }
+}
+
+// Goods Bogie class
+class GoodsBogie {
+    String shape;
+    String cargo;
+
+    GoodsBogie(String shape) {
+        this.shape = shape;
+    }
+
+    void assignCargo(String cargo) {
+        try {
+            // Validation rule
+            if (shape.equals("Rectangular") && cargo.equals("Petroleum")) {
+                throw new CargoSafetyException(
+                    "Unsafe Assignment: Petroleum cannot be loaded in Rectangular bogie"
+                );
+            }
+
+            this.cargo = cargo;
+            System.out.println("Cargo assigned successfully");
+
+        } catch (CargoSafetyException e) {
+            System.out.println("Error: " + e.getMessage());
+
+        } finally {
+            System.out.println("Assignment attempt completed (logged)");
+        }
+    }
+}
+
+// Main class
+public class CargoManagement {
+    public static void main(String[] args) {
+
+        GoodsBogie b1 = new GoodsBogie("Rectangular");
+
+        // Unsafe assignment
+        b1.assignCargo("Petroleum");
+
+        // Safe assignment
+        GoodsBogie b2 = new GoodsBogie("Cylindrical");
+        b2.assignCargo("Petroleum");
+
+        System.out.println("Program continues safely...");
+    }
+}
