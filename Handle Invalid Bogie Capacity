@@ -1,0 +1,36 @@
+// Custom Exception
+class InvalidCapacityException extends Exception {
+    public InvalidCapacityException(String message) {
+        super(message);
+    }
+}
+
+// Passenger Bogie class
+class PassengerBogie {
+    String name;
+    int capacity;
+
+    PassengerBogie(String name, int capacity) throws InvalidCapacityException {
+        if (capacity <= 0) {
+            throw new InvalidCapacityException("Capacity must be greater than 0");
+        }
+        this.name = name;
+        this.capacity = capacity;
+    }
+}
+
+// Main class
+public class BogieValidation {
+    public static void main(String[] args) {
+
+        try {
+            PassengerBogie b1 = new PassengerBogie("Sleeper", 72);
+            PassengerBogie b2 = new PassengerBogie("Invalid", -10); // ❌ will throw exception
+
+            System.out.println("Bogies created successfully");
+
+        } catch (InvalidCapacityException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
