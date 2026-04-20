@@ -1,0 +1,16 @@
+import java.util.Arrays;
+
+public class BogieSort {
+    public static void main(String[] args) {
+
+        // Array of bogie types
+        String[] bogieTypes = {"Sleeper", "AC Chair", "First Class", "General"};
+
+        // Sorting using built-in method
+        Arrays.sort(bogieTypes);
+
+        // Display sorted result
+        System.out.println("Sorted Bogie Types:");
+        System.out.println(Arrays.toString(bogieTypes));
+    }
+}
