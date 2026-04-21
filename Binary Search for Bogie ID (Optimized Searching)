@@ -1,0 +1,38 @@
+import java.util.Arrays;
+
+public class BinarySearchBogie {
+    public static void main(String[] args) {
+
+        // Sorted array of bogie IDs
+        String[] bogieIds = {"BG101", "BG205", "BG309", "BG412"};
+
+        String searchKey = "BG309";
+
+        int low = 0;
+        int high = bogieIds.length - 1;
+        boolean found = false;
+
+        // Binary search logic
+        while (low <= high) {
+            int mid = (low + high) / 2;
+
+            int result = bogieIds[mid].compareTo(searchKey);
+
+            if (result == 0) {
+                found = true;
+                break;
+            } else if (result < 0) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        // Display result
+        if (found) {
+            System.out.println("Bogie ID found: " + searchKey);
+        } else {
+            System.out.println("Bogie ID not found");
+        }
+    }
+}
