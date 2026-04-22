@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class TrainSearch {
+
+    public static void main(String[] args) {
+
+        List<String> bogieIds = new ArrayList<>(); // Empty list
+
+        try {
+            searchBogie(bogieIds, "BG101");
+        } catch (IllegalStateException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    public static void searchBogie(List<String> bogies, String key) {
+
+        // Fail-fast validation
+        if (bogies.isEmpty()) {
+            throw new IllegalStateException("No bogies available for search");
+        }
+
+        // Search logic (Linear Search example)
+        for (String id : bogies) {
+            if (id.equals(key)) {
+                System.out.println("Bogie found: " + key);
+                return;
+            }
+        }
+
+        System.out.println("Bogie not found");
+    }
+}
