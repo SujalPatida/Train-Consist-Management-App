@@ -19,12 +19,10 @@ public class BogieAggregation {
         bogies.add(new Bogie("AC Chair", 78));
         bogies.add(new Bogie("First Class", 24));
 
-        // Aggregating total capacity
         int totalCapacity = bogies.stream()
                                   .map(b -> b.capacity)
                                   .reduce(0, Integer::sum);
 
-        // Display total capacity
-        System.out.println("Total Seating Capacity: " + totalCapacity);
+        System.out.println("Total Seating Capacity: " +     totalCapacity);
     }
 }
