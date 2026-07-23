@@ -14,8 +14,6 @@ public class TrainSearch {
     }
 
     public static void searchBogie(List<String> bogies, String key) {
-
-        // Fail-fast validation
         if (bogies.isEmpty()) {
             throw new IllegalStateException("No bogies available for search");
         }
