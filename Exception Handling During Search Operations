@@ -20,7 +20,6 @@ public class TrainSearch {
             throw new IllegalStateException("No bogies available for search");
         }
 
-        // Search logic (Linear Search example)
         for (String id : bogies) {
             if (id.equals(key)) {
                 System.out.println("Bogie found: " + key);
