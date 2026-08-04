@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class TrainSearch {
 
     public static void main(String[] args) {
