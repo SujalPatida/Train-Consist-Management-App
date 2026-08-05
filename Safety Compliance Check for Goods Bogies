@@ -25,7 +25,6 @@ public class SafetyCheck {
                 !b.type.equals("Cylindrical") || 
                  b.cargo.equals("Petroleum")
             );
-
         // Display result
         if (isSafe) {
             System.out.println("Train is SAFE for transport");
