@@ -10,7 +10,6 @@ class Bogie {
         this.capacity = capacity;
     }
 }
-
 public class BogieFilter {
     public static void main(String[] args) {
 
